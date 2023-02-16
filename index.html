@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<style>
+    .popupClosed {
+        display: none;
+    }
+    .popupOpen {
+        display: block; !important;
+    }
+    #popup {
+        width: 200px;
+        height: 200px;
+        background:blue;
+    }
+</style>
+<body>
+    <div id="container">
+        <input id="one" type="checkbox">
+        <label for="one">One</label>
+        <br/>
+        <input id="two" type="checkbox">
+        <label for="two">Two</label>
+        <label for="two">Two</label>
+        <br/>
+        <input id="three" type="checkbox">
+        <label for="three">Three</label>
+        <br/>
+    </div>
+    <button type="button" onclick="openPopup(); showTextInContainer();">Open</button>
+    <script src="script.js"></script>
+    <div id="popup" class="popupClosed">
+        <script src="scriptPopup.js"></script>
+        <div id="textContainer">
+        </div>
+        <script>
+            alert('Hello from popup embedded JavaScript');
+        </script>
+    </div>
+    <script>
+        function openPopup() {
+            document.getElementById('popup').classList.remove('popupClosed');
+            document.getElementById('popup').classList.add('popupOpen');
+        }
+    </script>
+</body>
+</html>
